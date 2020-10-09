@@ -30,12 +30,11 @@ java提供了5个基本的注解，分别是
 
 - `@Retention `
 
-	- 表示注解存在阶段是保留在源码（编译期），字节码（类加载）或者运行期（JVM中运行）。在`@Retention`注解中使用枚举`RetentionPolicy`来表示注解保留时期
+  - 表示注解存在阶段是保留在源码（编译期），字节码（类加载）或者运行期（JVM中运行）。在`@Retention`注解中使用枚举`RetentionPolicy`来表示注解保留时期
 
-			- `@Retention(RetentionPolicy.SOURCE)`：注解仅存在于源码中，在class字节码文件中不包含
-			- `@Retention(RetentionPolicy.CLASS)`： 默认的保留策略，注解会在class字节码文件中存在，但运行时无法获得
-
-		- `@Retention(RetentionPolicy.RUNTIME)`： **注解会在class字节码文件中存在，在运行时可以通过反射获取到（常用）**
+     - `@Retention(RetentionPolicy.SOURCE)`：注解仅存在于源码中，在class字节码文件中不包含
+     - `@Retention(RetentionPolicy.CLASS)`： 默认的保留策略，注解会在class字节码文件中存在，但运行时无法获得
+     - `@Retention(RetentionPolicy.RUNTIME)`： **注解会在class字节码文件中存在，在运行时可以通过反射获取到（常用）**
 
 - `@Target`
 
