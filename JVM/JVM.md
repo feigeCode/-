@@ -247,6 +247,23 @@ java语言最显著的特点就是引入了垃圾回收机制，它使java程序
 
 # 7、JVM调优
 
+```java
+package com.feige.jvm;
+
+public class JvmDemo1 {
+    public static void main(String[] args) {
+        long maxMemory = Runtime.getRuntime().maxMemory();
+        long totalMemory = Runtime.getRuntime().totalMemory();
+        System.out.println("maxMemory:" + maxMemory/(double)1024/1024 +"m"+ "\ntotalMemory:" + totalMemory/(double)1024/1024+"m");
+    }
+}
+```
+
+~~~txt
+maxMemory:1788.5m
+totalMemory:121.0m
+~~~
+
 **常用的 JVM 调优的参数**
 
 - `-Xms2g`：初始化推大小为 2g；
