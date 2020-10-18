@@ -249,17 +249,74 @@ java语言最显著的特点就是引入了垃圾回收机制，它使java程序
 
 **常用的 JVM 调优的参数**
 
-- -Xms2g：初始化推大小为 2g；
-- -Xmx2g：堆最大内存为 2g；
-- -XX:NewRatio=4：设置年轻的和老年代的内存比例为 1:4；
-- -XX:SurvivorRatio=8：设置新生代 Eden 和 Survivor 比例为 8:2；
-- –XX:+UseParNewGC：指定使用 ParNew + Serial Old 垃圾回收器组合；
-- -XX:+UseParallelOldGC：指定使用 ParNew + ParNew Old 垃圾回收器组合；
-- -XX:+UseConcMarkSweepGC：指定使用 CMS + Serial Old 垃圾回收器组合；
-- -XX:+PrintGC：开启打印 gc 信息；
-- -XX:+PrintGCDetails：打印 gc 详细信息。
+- `-Xms2g`：初始化推大小为 2g；
+- `-Xmx2g`：堆最大内存为 2g；
+- `-XX:NewRatio=4`：设置年轻的和老年代的内存比例为 1:4；
+- `-XX:SurvivorRatio=8`：设置新生代 Eden 和 Survivor 比例为 8:2；
+- `–XX:+UseParNewGC`：指定使用 ParNew + Serial Old 垃圾回收器组合；
+- `-XX:+UseParallelOldGC`：指定使用 ParNew + ParNew Old 垃圾回收器组合；
+- `-XX:+UseConcMarkSweepGC`：指定使用 CMS + Serial Old 垃圾回收器组合；
+- `-XX:+PrintGC`：开启打印 gc 信息；
+- `-XX:+PrintGCDetails`：打印 gc 详细信息。
+- `-XX:+HeapDumpOnOutOfMemoryError` ：当遇到OutOfMemoryError时，生成Dump文件
+- `-XX:HeapDumpPath=E:\project\java-project\java-notes-code\JVM\heapdump.hprof`：指定生成Dump文件的路径
 
 
 
+# 8、JProfiler
+
+从网上下载JProfiler，下一步无脑安装
+
+idea安装JProfiler插件，File->Settings->Plugins，输入JProfiler点击安装，安装成功重启即可
+
+重启成功后点击File->Settings->Tools->JProfiler，选择JProfiler.exe文件路径输入即可
+
+生成Dump文件
+
+![image-20201018140136743](JVM/image-20201018140136743.png)
+
+~~~java
+package com.feige.jvm;
+
+import java.util.ArrayList;
 
 
+public class JvmDemo {
+    byte[] bytes = new byte[1024];
+    //-Xms2m -Xmx8m -XX:+PrintGCDetails
+    //-Xms2m -Xmx8m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=E:\project\java-project\java-notes-code\JVM\heapdump.hprof
+    public static void main(String[] args) {
+        int count = 0;
+        ArrayList<JvmDemo> jvmDemos = new ArrayList<JvmDemo>();
+        try {
+            while (true){
+                jvmDemos.add(new JvmDemo());
+                count++;
+            }
+        } catch (Error e) {
+            System.out.println("count:" + count);
+            e.printStackTrace();
+        }
+    }
+}
+
+~~~
+
+
+
+~~~txt
+java.lang.OutOfMemoryError: Java heap space
+Dumping heap to E:\project\java-project\java-notes-code\JVM\heapdump.hprof ...
+Heap dump file created [8345370 bytes in 0.014 secs]
+count:6324
+Exception in thread "main" Exception in thread "Monitor Ctrl-Break" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+~~~
+
+用JProfiler打开E:\project\java-project\java-notes-code\JVM\heapdump.hprof文件
+
+![image-20201018141311052](JVM/image-20201018141311052.png)
+
+可以看到是那一行出错
+
+![image-20201018141501727](JVM/image-20201018141501727.png)
