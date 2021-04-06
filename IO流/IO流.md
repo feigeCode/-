@@ -159,3 +159,115 @@ public class Main {
 
 [原文链接](https://thinkwon.blog.csdn.net/article/details/104390612)
 
+~~~java
+package com.feige.test;
+
+import java.io.*;
+import java.util.Scanner;
+
+/**
+ * @author feige
+ */
+public class FileStream {
+
+    //第一个
+    public static void main1(String[] args) {
+        Scanner scanner = null;
+        Reader reader = null;
+        try {
+            scanner = new Scanner(System.in);
+            System.out.println("请输入需要读的文件名：");
+            String fileName = scanner.nextLine();
+            File file = new File(fileName);
+            reader = new FileReader(file);
+            int len;
+            char[] chars = new char[1024];
+            while ((len = reader.read(chars)) != -1){
+                String str = new String(chars, 0, len);
+                System.out.println(str);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null){
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (scanner != null){
+                scanner.close();
+            }
+        }
+    }
+
+    //第二个
+    public static void main2(String[] args) {
+        Writer writer = null;
+        try (Scanner scanner = new Scanner(System.in)) {
+            String str = scanner.nextLine();
+            System.out.println("请输入需要写到文件的数据：");
+            File file = new File("b.txt");
+            writer = new FileWriter(file);
+            writer.write(str);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    //第三个
+    public static void main(String[] args) {
+        Writer writer = null;
+        Scanner scanner = null;
+        Reader reader = null;
+        try {
+            scanner = new Scanner(System.in);
+            System.out.println("请输入需要复制的文件名：");
+            String fileName1 = scanner.nextLine();
+            System.out.println("请输入需要粘贴的文件名：");
+            String fileName2 = scanner.nextLine();
+            File file1 = new File(fileName1);
+            File file2 = new File(fileName2);
+            reader = new FileReader(file1);
+            writer = new FileWriter(file2);
+            int len;
+            char[] chars = new char[1024];
+            while ((len = reader.read(chars)) != -1){
+                writer.write(chars,0,len);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (scanner != null){
+                scanner.close();
+            }
+            if (reader != null){
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    }
+}
+
+~~~
+

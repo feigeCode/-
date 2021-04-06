@@ -37,3 +37,38 @@ Error running 'TDM': Unknown run configuration type #com.intellij.j2ee.web.tomca
 点击enable
 
  最后一步：重启IDEA即可
+
+
+
+# idea自定义配置maven，永久
+
+C:\Users\feige\.IntelliJIdea2019.3\config\options\project.default.xml
+
+~~~xml
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="MavenImportPreferences">
+        <option name="generalSettings">
+          <MavenGeneralSettings>
+            <option name="localRepository" value="E:\java\apache-maven-3.6.1\maven.repo"/>
+            <option name="mavenHome" value="E:/java_maven/apache-maven-3.6.1"/>
+            <option name="useSettingsFile" value="E:\java_maven\apache-maven-3.6.1\conf\settings.xml"/>
+          </MavenGeneralSettings>
+        </option>
+      </component>
+       ......
+~~~
+
+![image-20201130142112001](IDEA/image-20201130142112001.png)
+
+![image-20201130142149143](IDEA/image-20201130142149143.png)
+
+![image-20201130142311472](IDEA/image-20201130142311472.png)
+
+# idea安装uniapp语法提示
+
+~~~shell
+npm i @dcloudio/types -D
+~~~
+

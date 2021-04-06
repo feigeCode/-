@@ -133,3 +133,27 @@ console.log(timestampFormat(getDateTimeStamp('2016-10-11 15:26:10')));
 console.log(getDateDiff(getDateTimeStamp('2016-10-11 15:26:10')));
 ~~~
 
+
+
+数组增强方法
+
+~~~~javas
+Array.prototype.push2 = function() {
+				for (let i = 0; i < arguments.length; i++) {
+					let ele = arguments[i];
+					if (this.indexOf(ele) == -1) {
+						this.push(ele);
+					}
+				}
+			};
+			Array.prototype.remove = function() {
+				for (let i = 0; i < arguments.length; i++) {
+					let ele = arguments[i];
+					let index = this.indexOf(ele);
+					if (index !== -1) {
+						this.splice(index, 1);
+					}
+				}
+			}
+~~~~
+
