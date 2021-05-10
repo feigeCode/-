@@ -72,3 +72,13 @@ C:\Users\feige\.IntelliJIdea2019.3\config\options\project.default.xml
 npm i @dcloudio/types -D
 ~~~
 
+
+
+# springboot使用jsp报错
+
+~~~txt
+Cannot resolve org.apache.tomcat.embed:tomcat-embed-jasper:9.0.27
+~~~
+
+![image-20210427132520485](IDEA/image-20210427132520485.png)
+
