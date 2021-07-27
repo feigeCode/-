@@ -116,9 +116,9 @@ TCP: 打电话
 
 - **三次握手和四次挥手**
 
-	![img](net/d8f9d72a6059252d20d93b0a6645fb3e59b5b9d2.jpeg)
+	![img](https://gitee.com/feigeCode/picture/raw/master/img/d8f9d72a6059252d20d93b0a6645fb3e59b5b9d2.jpeg)
 
-	![img](net/861fa058f2da35f8efa70b29bf7c45fd8689.gif)
+	![img](https://gitee.com/feigeCode/picture/raw/master/img/861fa058f2da35f8efa70b29bf7c45fd8689.gif)
 
 > 三次握手的本质是确认通信双方收发数据的能力
 >
@@ -140,7 +140,7 @@ TCP: 打电话
 
 
 
-​		![img](net/48540923dd54564e5260495ce0006487d0584fb6.jpeg)
+​		![img](https://gitee.com/feigeCode/picture/raw/master/img/48540923dd54564e5260495ce0006487d0584fb6.jpeg)
 
 > 第一次挥手：客户端向服务端发出连接释放报文
 >
@@ -813,11 +813,11 @@ public class TeacherSend {
 
 **学生：**
 
-![image-20201006092653198](net/image-20201006092653198.png)
+![image-20201006092653198](https://gitee.com/feigeCode/picture/raw/master/img/image-20201006092653198.png)
 
 **老师：**
 
-![image-20201006092634066](net/image-20201006092634066.png)
+![image-20201006092634066](https://gitee.com/feigeCode/picture/raw/master/img/image-20201006092634066.png)
 
 ## URL
 

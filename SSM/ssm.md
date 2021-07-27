@@ -30,7 +30,7 @@ SELECT * FROM books
 
 1. 新建一Maven项目！ ssmbuild ， 添加web的支持
 
-	![image-20200128134359317](ssm/image-20200128134359317.png)
+	![image-20200128134359317](https://gitee.com/feigeCode/picture/raw/master/img/image-20200128134359317.png)
 
 2. 导入相关的pom依赖！
 
@@ -828,9 +828,9 @@ Spring层搞定！再次理解一下，Spring就是一个大杂烩，一个容�
 
 	步骤：点击项目结构----->Artifacts----->点击自己的项目(ssm:war exploded)--->(点击工具栏的第一个)在WEB-INF目录下新建一个lib包----->选中lib------>点击工具栏的第三个然后选中第一个---->把里面的包全部选中点击ok---->点击Apply再ok
 
-	![image-20200128125126368](ssm\image-20200128125126368.png)
+	![image-20200128125126368](https://gitee.com/feigeCode/picture/raw/master/img/image-20200128125126368.png)
 
-	![image-20200128125237179](ssm\image-20200128125237179.png)
+	![image-20200128125237179](https://gitee.com/feigeCode/picture/raw/master/img/image-20200128125237179.png)
 
 3. 重启Tomcat 即可解决！
 

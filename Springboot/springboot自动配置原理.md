@@ -6,7 +6,7 @@
 
 条件装配：满足conditional指定的条件则注入bean
 
-![img](springboot自动配置原理/1602835786727-28b6f936-62f5-4fd6-a6c5-ae690bd1e31d.png)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/1602835786727-28b6f936-62f5-4fd6-a6c5-ae690bd1e31d.png)
 
 ## 2、引导加载配置类
 
@@ -60,7 +60,7 @@ static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImp
 
 ```
 
-![image-20210214173808303](springboot自动配置原理/image-20210214173808303.png)
+![image-20210214173808303](https://gitee.com/feigeCode/picture/raw/master/img/image-20210214173808303.png)
 
 ~~~java
 public static void register(BeanDefinitionRegistry registry, String... packageNames) {
@@ -163,7 +163,7 @@ private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoad
 
 
 
-![image-20210214190541904](springboot自动配置原理/image-20210214190541904.png)
+![image-20210214190541904](https://gitee.com/feigeCode/picture/raw/master/img/image-20210214190541904.png)
 
 spring-boot-autoconfigure-2.3.4.RELEASE.jar包META-INF/spring.factories
 

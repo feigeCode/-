@@ -757,7 +757,7 @@ public class User {
 
 我们可以先画一个流程图，分析一下Mybatis的执行过程！
 
-![Mybatis的执行过程](Mybatis/timg.jpg)
+![Mybatis的执行过程](https://gitee.com/feigeCode/picture/raw/master/img/timg.jpg)
 
 **作用域理解**
 
@@ -1081,13 +1081,13 @@ select id , name , pwd from user where id = #{id}
 	```
 
 4. 利用Debug查看本质
-	![Debug查看本质](Mybatis/mmexportb9efb2dc5307fcf20a143a02919ee85b.png)
+	![Debug查看本质](https://gitee.com/feigeCode/picture/raw/master/img/mmexportb9efb2dc5307fcf20a143a02919ee85b.png)
 
 5. 本质上利用了jvm的动态代理机制
-	![jvm的动态代理机制](Mybatis/mmexportc4a476d34ac7dfec212712457d855d6c.png)
+	![jvm的动态代理机制](https://gitee.com/feigeCode/picture/raw/master/img/mmexportc4a476d34ac7dfec212712457d855d6c.png)
 
 6. Mybatis详细的执行流程
-	![Mybatis详细的执行流程](Mybatis/mmexport250129a6baed6c3d5f811b74efe74633.png)
+	![Mybatis详细的执行流程](https://gitee.com/feigeCode/picture/raw/master/img/mmexport250129a6baed6c3d5f811b74efe74633.png)
 
 
 ### 注解增删改
@@ -2121,7 +2121,6 @@ public void addInitBlog(){
 	```
 
 5. 结果分析
-	
 
 #### 一级缓存失效的四种情况
 
@@ -2310,7 +2309,7 @@ public void addInitBlog(){
 
 #### 缓存原理
 
-![缓存原理](Mybatis/mmexport279719bdb3988d915b40866dde62f022.png)
+![缓存原理](https://gitee.com/feigeCode/picture/raw/master/img/mmexport279719bdb3988d915b40866dde62f022.png)
 
 #### EhCache
 

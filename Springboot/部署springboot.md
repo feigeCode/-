@@ -25,6 +25,8 @@ sh shutdown.sh
 
 ~~~bash
 java -jar ./项目名字
+# 后台运行
+nohup java -jar xiaofei-cloud-classroom-api-1.0-SNAPSHOT.jar > xiaofei.log &
 ~~~
 
 ## 项目在Linux启动正常，但不能访问
@@ -57,7 +59,7 @@ PS：需要注意的是，第四种情况，是针对云服务器而言的，一
 
 下边是开启步骤：
 
-![image-20200216222953874](部署springboot/image-20200216222953874-1601786067617.png)x
+![image-20200216222953874](https://gitee.com/feigeCode/picture/raw/master/img/image-20200216222953874-1601786067617.png)x
 
-![image-20200216223050452](部署springboot/image-20200216223050452.png)
+![image-20200216223050452](https://gitee.com/feigeCode/picture/raw/master/img/image-20200216223050452.png)
 

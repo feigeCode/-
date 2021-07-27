@@ -50,7 +50,7 @@ int
 
 # 3、Class类
 
-![image-20201008150808019](reflect/image-20201008150808019.png)
+![image-20201008150808019](https://gitee.com/feigeCode/picture/raw/master/img/image-20201008150808019.png)
 
 ~~~java
 package com.feige.reflect;
@@ -101,11 +101,11 @@ class java.lang.Class
 
 # 4、类加载与ClassLoader的理解
 
-![image-20201008175554562](reflect/image-20201008175554562.png)
+![image-20201008175554562](https://gitee.com/feigeCode/picture/raw/master/img/image-20201008175554562.png)
 
 
 
-![image-20201008175705445](reflect/image-20201008175705445.png)
+![image-20201008175705445](https://gitee.com/feigeCode/picture/raw/master/img/image-20201008175705445.png)
 
 
 
@@ -211,7 +211,7 @@ E:\IntelliJ IDEA 2019.3.3\lib\idea_rt.jar
 
 **这里说明一下双亲委派机制：**
 
-![img](reflect/20180813145521896)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/20180813145521896)
 
 ​    双亲委派机制，其工作原理的是，如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式，即每个儿子都很懒，每次有活就丢给父亲去干，直到父亲说这件事我也干不了时，儿子自己才想办法去完成。
 

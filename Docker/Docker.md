@@ -20,7 +20,11 @@ yum install -y yum-utils
 
 yum-config-manager \
     --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo #国外的镜像慢，可以换成阿里云的
+    https://download.docker.com/linux/centos/docker-ce.repo
+    
+    
+    
+     #国外的镜像慢，可以换成阿里云的
 ~~~
 
 ## 1.3、安装最新docker engine和容器
@@ -44,6 +48,10 @@ docker-ce.x86_64  18.06.0.ce-3.el7                    docker-ce-stable
 ~~~shell
 yum install docker-ce-版本号 docker-ce-cli-版本号 containerd.io #docker-ce-18.09.1
 ~~~
+
+配置了下载镜像快
+
+[阿里云镜像加速](https://cr.console.aliyun.com/cn-zhangjiakou/instances/mirrors)
 
 ## 1.4、启动docker
 
@@ -167,11 +175,11 @@ docker ps
 - **docker attach**
 - **docker exec**：退出容器终端，不会导致容器的停止。
 
-![image-20200518231603154](Docker/image-20200518231603154.png)
+![image-20200518231603154](https://gitee.com/feigeCode/picture/raw/master/img/image-20200518231603154.png)
 
 
 
-![image-20200518231943175](Docker/image-20200518231943175.png)
+![image-20200518231943175](https://gitee.com/feigeCode/picture/raw/master/img/image-20200518231943175.png)
 
 
 
@@ -340,7 +348,7 @@ bootfs(boot file system) 主要包含bootloader和kernel，bootloader 主要是�
 
  四、Docker 镜像联合文件系统分层，Tomcat镜像示例
 
-　　![img](Docker/1185883-20190705114018923-574032187.png)
+　　![img](https://gitee.com/feigeCode/picture/raw/master/img/1185883-20190705114018923-574032187.png)
 
 　　　采用这种分层结构最大的一个好处就是共享资源，比如有多个镜像都从相同的base镜像构建而来，那么宿主机只需要在磁盘上保存一份base镜像，
 
@@ -404,7 +412,7 @@ Digest: sha256:5c9fd7949bc0f076429fa2c40d0e7406e095bdb5216a923257b31972a6f3ae4
 
 
 
-![image-20200520154651460](Docker/image-20200520154651460.png)
+![image-20200520154651460](https://gitee.com/feigeCode/picture/raw/master/img/image-20200520154651460.png)
 
 ## 具名和匿名挂载
 
@@ -573,11 +581,11 @@ docker run -it --name centos02 --volumes-from dcb3333fbaa9 contos01:1.0 #实现�
 
 # 6、Dockerfile
 
-![图片](Docker/u=4047443406,3367621745&fm=11&gp=0.jpg)
+![图片](https://gitee.com/feigeCode/picture/raw/master/img/u=4047443406,3367621745&fm=11&gp=0.jpg)
 
 
 
-![image-20200520163628045](Docker/image-20200520163628045.png)
+![image-20200520163628045](https://gitee.com/feigeCode/picture/raw/master/img/image-20200520163628045.png)
 
 
 
@@ -685,11 +693,11 @@ PING 172.18.0.2 (172.18.0.2) 56(84) bytes of data.
 
 **1、 我们每启动一个docker容器，docker就会给docker容器分配一个ip，我们只要安装了docker，就会有一个网卡docker0桥接模式，使用的技术是veth-pair技术！**
 
-![image-20200521135224103](Docker/image-20200521135224103.png)
+![image-20200521135224103](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521135224103.png)
 
 重新启动一个tomcat
 
-![image-20200521135309437](Docker/image-20200521135309437.png)
+![image-20200521135309437](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521135309437.png)
 
 我们发现这两个容器带来的网卡，都是一对一对的
 
@@ -701,13 +709,13 @@ OpenStac，docker容器之间的连接，ovs的连接，都是使用evth-pair技
 
 **2、tomcat02能ping通tomcat01**
 
-![image-20200521140147018](Docker/image-20200521140147018.png)
+![image-20200521140147018](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521140147018.png)
 
 结论：tomcat01和tomcat02是公用的一个路由器。
 
 所有容器不指定网络的情况下，都是docker0路由的，docker会给我们的容器非配一个默认的可用ip
 
-![image-20200521142641328](Docker/image-20200521142641328.png)
+![image-20200521142641328](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521142641328.png)
 
 
 
@@ -752,7 +760,7 @@ ping: tomcat03: Name or service not known
 
 **inspect探究一下**
 
-![image-20200521143037846](Docker/image-20200521143037846.png)
+![image-20200521143037846](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521143037846.png)
 
 其实这个tomcat03就是本地配置了tomcat02
 
@@ -821,7 +829,7 @@ cedc582ebf9f        none                null                local
 
 自己的网络就创建好了
 
-![image-20200521144912812](Docker/image-20200521144912812.png)
+![image-20200521144912812](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521144912812.png)
 
 ~~~shell
 [root@VM_0_2_centos ~]# docker run -d -P --name tomcat01 --net mynet tomcat
@@ -882,7 +890,7 @@ PING tomcat01 (192.168.0.2) 56(84) bytes of data.
 docker network inspect mynet
 ~~~
 
-![image-20200521150619991](Docker/image-20200521150619991.png)
+![image-20200521150619991](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521150619991.png)
 
 ## 实战：部署redis集群
 
@@ -1041,4 +1049,4 @@ d26c60a4db2278a9e464b3c5120ef55b158f75f2 172.38.0.14:6379@16379 myself,master - 
 
 故障转移
 
-![image-20200521155500672](Docker/image-20200521155500672.png)
+![image-20200521155500672](https://gitee.com/feigeCode/picture/raw/master/img/image-20200521155500672.png)

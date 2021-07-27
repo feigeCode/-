@@ -1,4 +1,4 @@
-![image-20200401221721169](go编译为Linux能运行的文件.assets/image-20200401221721169.png)
+![image-20200401221721169](https://gitee.com/feigeCode/picture/raw/master/img/image-20200401221721169.png)
 
 解决方案：
 

@@ -20,11 +20,11 @@
 
 1.配置信息：Run Configuration Error: Broken configuration due to unavailable plugin or invalid configuration data.
 
-![img](IDEA/1128526-20181116093349704-382998954.png)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/1128526-20181116093349704-382998954.png)
 
 2.idea运行异常信息：
 
-Error running 'TDM': Unknown run configuration type #com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory![img](IDEA/1128526-20181116093430863-206537662.png)
+Error running 'TDM': Unknown run configuration type #com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory![img](https://gitee.com/feigeCode/picture/raw/master/img/1128526-20181116093430863-206537662.png)
 
 ### 解决方案：
 
@@ -32,7 +32,7 @@ Error running 'TDM': Unknown run configuration type #com.intellij.j2ee.web.tomca
 
 2.在IDEA--PLUGIN中检查tomcat and tomee Integration是否勾选（必须勾选，才能实现idea以tomcat方式配置和启动）
 
-![img](IDEA/1128526-20181116093602918-152336446.png)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/1128526-20181116093602918-152336446.png)
 
 点击enable
 
@@ -60,11 +60,11 @@ C:\Users\feige\.IntelliJIdea2019.3\config\options\project.default.xml
        ......
 ~~~
 
-![image-20201130142112001](IDEA/image-20201130142112001.png)
+![image-20201130142112001](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130142112001.png)
 
-![image-20201130142149143](IDEA/image-20201130142149143.png)
+![image-20201130142149143](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130142149143.png)
 
-![image-20201130142311472](IDEA/image-20201130142311472.png)
+![image-20201130142311472](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130142311472.png)
 
 # idea安装uniapp语法提示
 
@@ -80,5 +80,45 @@ npm i @dcloudio/types -D
 Cannot resolve org.apache.tomcat.embed:tomcat-embed-jasper:9.0.27
 ~~~
 
-![image-20210427132520485](IDEA/image-20210427132520485.png)
+![image-20210427132520485](https://gitee.com/feigeCode/picture/raw/master/img/image-20210427132520485.png)
 
+
+
+# 启动springboot报错 java.lang.outofmemoryerror gc overhead limit exceeded。
+
+1）在pom 中添加依赖插件
+
+ ~~~xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+                <fork>true</fork>
+                <meminitial>512m</meminitial>
+                <!-- 如果不够读者可以加大 -->
+                <maxmem>4096m</maxmem>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+ ~~~
+
+
+
+2）idea maven 的import 的vm 参数修改
+修改idea maven 的import 参数， 具体如图1所示：
+
+![image-20210727110135824](https://gitee.com/feigeCode/picture/raw/master/img/image-20210727110135824.png)
+
+3）Java 编译参数：
+修改Java 编译参数， 具体如图2所示：
+
+![](https://gitee.com/feigeCode/picture/raw/master/img/image-20210727110135824.png)
+可以根据实际情况修改编译参数。

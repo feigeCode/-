@@ -11,7 +11,7 @@
 
 ## 1.2、thyemeleaf的配置类
 
-![image-20200218200616530](Thymeleaf/image-20200218200616530.png)
+![image-20200218200616530](https://gitee.com/feigeCode/picture/raw/master/img/image-20200218200616530.png)
 
 ~~~java
 @ConfigurationProperties(
@@ -52,7 +52,7 @@ public class ThymeleafProperties {
 
 **一、我们可以使用任意的 th:attr 来替换Html中原生属性的值！【测试】 全部属性可以参考官网文档#10； th语法**
 
-![img](Thymeleaf/thymeleaf.png)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/thymeleaf.png)
 
 标准表达式功能的快速摘要：
 

@@ -19,13 +19,14 @@ sudo apt-get install git
 如果是其他Linux版本，可以直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：`./config`，`make`，`sudo make install`这几个命令安装就好了。
 
 ## 在Mac OS X上安装Git
+
 如果你正在使用Mac做开发，有两种安装Git的方法。
 
 一是安装homebrew，然后通过homebrew安装Git，具体方法请参考homebrew的文档：http://brew.sh/。
 
 第二种方法更简单，也是推荐的方法，就是直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”->“Preferences”，在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。
 
-![install-git-by-xcode](Git笔记/0.jpg)
+![install-git-by-xcode](https://gitee.com/feigeCode/picture/raw/master/img/0.jpg)
 
 Xcode是Apple官方IDE，功能非常强大，是开发Mac和iOS App的必选装备，而且是免费的！
 
@@ -58,13 +59,13 @@ $ git init
 Initialized empty Git repository in /Users/michael/learnGit笔记/.Git笔记/
 ```
 
-![image-20200212133917146](Git笔记/image-20200212133917146-1583835639479.png)
+![image-20200212133917146](https://gitee.com/feigeCode/picture/raw/master/img/image-20200212133917146-1583835639479.png)
 
 Git就创建一个空的仓库（empty Git repository），目录下多了一个`.git`的目录，这个目录是Git来跟踪管理版本库的，不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。
 
 如果你没有看到`.git`目录，那是因为这个目录默认是隐藏的，windows下可以进入该目录，然后点击查看，勾选隐藏目录那个框
 
-![image-20200212134738875](Git笔记/image-20200212134738875.png)
+![image-20200212134738875](https://gitee.com/feigeCode/picture/raw/master/img/image-20200212134738875.png)
 
 mac用`ls -ah`命令就可以看见。
 
@@ -87,7 +88,7 @@ $ git commit -m 'first use git'
  create mode 100644 feige.txt
 ```
 
-![image-20200212135617934](Git笔记/image-20200212135617934.png)
+![image-20200212135617934](https://gitee.com/feigeCode/picture/raw/master/img/image-20200212135617934.png)
 
 简单解释一下`git commit`命令，`-m`后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
 
@@ -158,9 +159,7 @@ love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
 提交后，我们再用`git status`命令看看仓库的当前状态：
 
 ```bash
-$ git status
-On branch master
-nothing to commit, working tree clean
+$ git statusOn branch masternothing to commit, working tree clean
 ```
 
 Git告诉我们当前没有需要提交的修改，而且，工作目录是干净（working tree clean）的。
@@ -187,25 +186,11 @@ git log --pretty=oneline
 现在，我们要把当前版本`append GPL`回退到上一个版本`add distributed`，就可以使用`git reset`命令：
 
 ~~~bash
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git reset --hard HEAD^
-HEAD is now at 72c881b first use git
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ cat feige.txt
-第一次使用git
-
+love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git reset --hard HEAD^HEAD is now at 72c881b first use gitlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ cat feige.txt第一次使用git
 ~~~
 
 ~~~bash
-$ git reset --hard 3f038286ca
-HEAD is now at 3f03828 update
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ cat feige.txt
-第一次使用git
-使用 git status
-
+$ git reset --hard 3f038286caHEAD is now at 3f03828 updatelove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ cat feige.txt第一次使用git使用 git status
 ~~~
 
 只要命令行窗口没关，你可以找到你要回到的版本的版本号`commit id是`1094adb...`，就可以指定回到未来的某个版本
@@ -215,12 +200,7 @@ $ cat feige.txt
 当你用`$ git reset --hard HEAD^`回退到`add distributed`版本时，再想恢复到`append GPL`，就必须找到`append GPL`的commit id。Git提供了一个命令`git reflog`用来记录你的每一次命令：
 
 ~~~bash
-$ git reflog
-3f03828 (HEAD -> master) HEAD@{0}: reset: moving to 3f038286ca
-72c881b HEAD@{1}: reset: moving to HEAD^
-3f03828 (HEAD -> master) HEAD@{2}: commit: update
-72c881b HEAD@{3}: commit (initial): first use git
-
+$ git reflog3f03828 (HEAD -> master) HEAD@{0}: reset: moving to 3f038286ca72c881b HEAD@{1}: reset: moving to HEAD^3f03828 (HEAD -> master) HEAD@{2}: commit: update72c881b HEAD@{3}: commit (initial): first use git
 ~~~
 
 **小结**
@@ -252,55 +232,10 @@ Git的版本库里存了很多东西，其中最重要的就是称为stage（或
 `git add`命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行`git commit`就可以一次性把暂存区的所有修改提交到分支。
 
 ~~~bash
-$ git status
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        dage.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git add dage.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ status
-bash: status: command not found
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   dage.txt
-
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git add feige.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   dage.txt
-
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git commit -m 'dage'
-[master bd8a360] dage
- 1 file changed, 1 insertion(+)
- create mode 100644 dage.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-nothing to commit, working tree clean
-
-
+$ git statusOn branch masterUntracked files:  (use "git add <file>..." to include in what will be committed)        dage.txtnothing added to commit but untracked files present (use "git add" to track)love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git add dage.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ statusbash: status: command not foundlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges to be committed:  (use "git restore --staged <file>..." to unstage)        new file:   dage.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git add feige.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges to be committed:  (use "git restore --staged <file>..." to unstage)        new file:   dage.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git commit -m 'dage'[master bd8a360] dage 1 file changed, 1 insertion(+) create mode 100644 dage.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masternothing to commit, working tree clean
 ~~~
 
-![image-20200212144043690](Git笔记/image-20200212144043690.png)
+![image-20200212144043690](https://gitee.com/feigeCode/picture/raw/master/img/image-20200212144043690.png)
 
 # 8、管理修改
 
@@ -309,45 +244,7 @@ nothing to commit, working tree clean
 每次修改，如果不用`git add`到暂存区，那就不会加入到`commit`中
 
 ~~~bash
-$ git diff HEAD -- feige.txt
-diff --git a/feige.txt b/feige.txt
-index c6c9b52..3db5b1e 100644
---- a/feige.txt
-+++ b/feige.txt
-@@ -1,4 +1,5 @@
- 第一次使用git
- 使用 git status
- 暂存区
--撤销修改
-\ No newline at end of file
-+撤销修改
-+feige
-\ No newline at end of file
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   feige.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git checkout -- feige.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ cat feige.txt
-第一次使用git
-使用 git status
-暂存区
-撤销修改
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-nothing to commit, working tree clean
-
+$ git diff HEAD -- feige.txtdiff --git a/feige.txt b/feige.txtindex c6c9b52..3db5b1e 100644--- a/feige.txt+++ b/feige.txt@@ -1,4 +1,5 @@ 第一次使用git 使用 git status 暂存区-撤销修改\ No newline at end of file+撤销修改+feige\ No newline at end of filelove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges not staged for commit:  (use "git add <file>..." to update what will be committed)  (use "git restore <file>..." to discard changes in working directory)        modified:   feige.txtno changes added to commit (use "git add" and/or "git commit -a")love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git checkout -- feige.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ cat feige.txt第一次使用git使用 git status暂存区撤销修改love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masternothing to commit, working tree clean
 ~~~
 
 
@@ -373,20 +270,7 @@ $ git checkout -- feige.txt
 **命令`git reset HEAD `可以把暂存区的修改撤销掉（unstage），重新放回工作区**
 
 ~~~bash
-$ git reset HEAD feige.txt
-Unstaged changes after reset:
-M       feige.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   feige.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
+$ git reset HEAD feige.txtUnstaged changes after reset:M       feige.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges not staged for commit:  (use "git add <file>..." to update what will be committed)  (use "git restore <file>..." to discard changes in working directory)        modified:   feige.txtno changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
 **小结**
@@ -404,34 +288,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 手动删除一个文件或rm删除一个文件，Git知道你删除了文件，因此，工作区和版本库就不一致了，`git status`可以知道哪些文件被删除了，如果确实要从版本库中删除该文件，那就用命令`git rm`删掉，并且`git commit`：
 
 ~~~bash
-$ rm dage.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        deleted:    dage.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git rm dage.txt
-rm 'dage.txt'
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        deleted:    dage.txt
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git commit -m 'remove dage.txt'
-[master 25fe051] remove dage.txt
- 1 file changed, 1 deletion(-)
- delete mode 100644 dage.txt
-
+$ rm dage.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges not staged for commit:  (use "git add/rm <file>..." to update what will be committed)  (use "git restore <file>..." to discard changes in working directory)        deleted:    dage.txtno changes added to commit (use "git add" and/or "git commit -a")love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git rm dage.txtrm 'dage.txt'love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges to be committed:  (use "git restore --staged <file>..." to unstage)        deleted:    dage.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git commit -m 'remove dage.txt'[master 25fe051] remove dage.txt 1 file changed, 1 deletion(-) delete mode 100644 dage.txt
 ~~~
 
 
@@ -439,19 +296,7 @@ $ git commit -m 'remove dage.txt'
 手动删除一个文件或rm删除一个文件时可以通过以下命令撤销
 
 ~~~bash
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        deleted:    dage.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git checkout -- dage.txt
-
+love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git statusOn branch masterChanges not staged for commit:  (use "git add/rm <file>..." to update what will be committed)  (use "git restore <file>..." to discard changes in working directory)        deleted:    dage.txtno changes added to commit (use "git add" and/or "git commit -a")love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git checkout -- dage.txt
 ~~~
 
 `git checkout`其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
@@ -482,30 +327,14 @@ ssh-keygen -t rsa -C "1835698775@qq.com"
 
 然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容：
 
-![image-20200212213850910](Git笔记/image-20200212213850910.png)
+![image-20200212213850910](https://gitee.com/feigeCode/picture/raw/master/img/image-20200212213850910.png)
 
 为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
 
 # 11、创建远程仓库
 
 ~~~bash
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ echo "# java" >> README.md
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git add README.md
-warning: LF will be replaced by CRLF in README.md.
-The file will have its original line endings in your working directory
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git commit -m "first commit"
-[master 0dfe941] first commit
- 1 file changed, 1 insertion(+)
- create mode 100644 README.md
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git remote add origin git@github.com:feigeCode/java.git
-
+love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ echo "# java" >> README.mdlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git add README.mdwarning: LF will be replaced by CRLF in README.md.The file will have its original line endings in your working directorylove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git commit -m "first commit"[master 0dfe941] first commit 1 file changed, 1 insertion(+) create mode 100644 README.mdlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git remote add origin git@github.com:feigeCode/java.git
 ~~~
 
 添加后，远程库的名字就是`origin`，这是Git默认的叫法，也可以改成别的，但是`origin`这个名字一看就知道是远程库。
@@ -513,17 +342,7 @@ $ git remote add origin git@github.com:feigeCode/java.git
 下一步，就可以把本地库的所有内容推送到远程库上：
 
 ~~~bash
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git push -u origin master
-Counting objects: 100% (23/23), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (13/13), done.
-Writing objects: 100% (23/23), 1.90 KiB | 277.00 KiB/s, done.
-Total 23 (delta 0), reused 0 (delta 0)
-To github.com:feigeCode/java.git
- * [new branch]      master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
+love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git push -u origin masterCounting objects: 100% (23/23), done.Delta compression using up to 8 threadsCompressing objects: 100% (13/13), done.Writing objects: 100% (23/23), 1.90 KiB | 277.00 KiB/s, done.Total 23 (delta 0), reused 0 (delta 0)To github.com:feigeCode/java.git * [new branch]      master -> masterBranch 'master' set up to track remote branch 'master' from 'origin'.
 ~~~
 
 把本地库的内容推送到远程，用`git push`命令，实际上是把当前分支`master`推送到远程。
@@ -543,9 +362,7 @@ $ git push origin master
 当你第一次使用Git的`clone`或者`push`命令连接GitHub时，会得到一个警告：
 
 ```bash
-The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
-RSA key fingerprint is xx.xx.xx.xx.xx.
-Are you sure you want to continue connecting (yes/no)?
+The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.RSA key fingerprint is xx.xx.xx.xx.xx.Are you sure you want to continue connecting (yes/no)?
 ```
 
 这是因为Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入`yes`回车即可。
@@ -572,7 +389,7 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 
 # 12、从远程库克隆
 
-![image-20200212220313374](Git笔记/image-20200212220313374.png)
+![image-20200212220313374](https://gitee.com/feigeCode/picture/raw/master/img/image-20200212220313374.png)
 
 命令`git clone`克隆一个本地库：
 
@@ -601,24 +418,13 @@ Git支持多种协议，包括`https`，但通过`ssh`支持的原生`git`协议
 用`git branch`命令查看当前分支
 
 ~~~bash
-$ git checkout -b dev
-Switched to a new branch 'dev'
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)
-$ git branch dev
-fatal: A branch named 'dev' already exists.
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)
-$ git checkout dev
-Already on 'dev'
+$ git checkout -b devSwitched to a new branch 'dev'love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)$ git branch devfatal: A branch named 'dev' already exists.love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)$ git checkout devAlready on 'dev'
 ~~~
 
 `git branch`命令会列出所有分支，当前分支前面会标一个`*`号。
 
 ~~~bash
-git branch
-* dev
-  master
+git branch* dev  master
 ~~~
 
 我们就可以在`dev`分支上正常提交
@@ -626,17 +432,13 @@ git branch
 然后提交：
 
 ```bash
-$ git add feige.txt 
-$ git commit -m "branch test"
-[dev b17d20e] branch test
- 1 file changed, 1 insertion(+)
+$ git add feige.txt $ git commit -m "branch test"[dev b17d20e] branch test 1 file changed, 1 insertion(+)
 ```
 
 现在，`dev`分支的工作完成，我们就可以切换回`master`分支：
 
 ```bash
-$ git checkout master
-Switched to branch 'master'
+$ git checkout masterSwitched to branch 'master'
 ```
 
 切换回`master`分支后，再查看一个`feige.txt`文件，刚才添加的内容不见了！因为那个提交是在`dev`分支上，而`master`分支此刻的提交点并没有变
@@ -644,11 +446,7 @@ Switched to branch 'master'
 现在，我们把`dev`分支的工作成果合并到`master`分支上：
 
 ```bash
-$ git merge dev
-Updating d46f35e..b17d20e
-Fast-forward
- readme.txt | 1 +
- 1 file changed, 1 insertion(+)
+$ git merge devUpdating d46f35e..b17d20eFast-forward readme.txt | 1 + 1 file changed, 1 insertion(+)
 ```
 
 `git merge`命令用于合并指定分支到当前分支。合并后，再查看`readme.txt`的内容，就可以看到，和`dev`分支的最新提交是完全一样的。
@@ -660,49 +458,19 @@ Fast-forward
 合并完成后，就可以放心地删除`dev`分支了：
 
 ```bash
-$ git branch -d dev
-Deleted branch dev (was b17d20e).
+$ git branch -d devDeleted branch dev (was b17d20e).
 ```
 
 删除后，查看`branch`，就只剩下`master`分支了：
 
 ```bash
-$ git branch
-* master
+$ git branch* master
 ```
 
 因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在`master`分支上工作效果是一样的，但过程更安全。
 
 ~~~bash
-$ git status
-On branch dev
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   feige.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)
-$ git add feige.txt
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)
-$ git commit -m 'branch test'
-[dev 85aa617] branch test
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)
-$ git checkout master
-Switched to branch 'master'
-Your branch is up to date with 'origin/master'.
-
-love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)
-$ git merge dev
-Updating 0dfe941..85aa617
-Fast-forward
- feige.txt | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
+$ git statusOn branch devChanges not staged for commit:  (use "git add <file>..." to update what will be committed)  (use "git restore <file>..." to discard changes in working directory)        modified:   feige.txtno changes added to commit (use "git add" and/or "git commit -a")love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)$ git add feige.txtlove。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)$ git commit -m 'branch test'[dev 85aa617] branch test 1 file changed, 2 insertions(+), 1 deletion(-)love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (dev)$ git checkout masterSwitched to branch 'master'Your branch is up to date with 'origin/master'.love。com@LAPTOP-Q6F3A4OJ MINGW64 /e/Git笔记/learngit (master)$ git merge devUpdating 0dfe941..85aa617Fast-forward feige.txt | 3 ++- 1 file changed, 2 insertions(+), 1 deletion(-)
 ~~~
 
 **switch**
@@ -761,7 +529,7 @@ Git鼓励大量使用分支：
 
 所以，团队合作的分支看起来就像这样：
 
-![git-br-policy](https://www.liaoxuefeng.com/files/attachments/919023260793600/0)
+![git-br-policy](https://gitee.com/feigeCode/picture/raw/master/img/0)
 
 **小结**
 
@@ -774,8 +542,7 @@ Git分支十分强大，在团队开发中应该充分应用。
 Git提供了一个`stash`功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
 
 ```bash
-$ git stash
-Saved working directory and index state WIP on dev: f52c633 add merge
+$ git stashSaved working directory and index state WIP on dev: f52c633 add merge
 ```
 
 一是用`git stash apply`恢复，但是恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
@@ -783,20 +550,7 @@ Saved working directory and index state WIP on dev: f52c633 add merge
 另一种方式是用`git stash pop`，恢复的同时把stash内容也删了：
 
 ```bash
-$ git stash pop
-On branch dev
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   hello.py
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   readme.txt
-
-Dropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
+$ git stash popOn branch devChanges to be committed:  (use "git reset HEAD <file>..." to unstage)	new file:   hello.pyChanges not staged for commit:  (use "git add <file>..." to update what will be committed)  (use "git checkout -- <file>..." to discard changes in working directory)	modified:   readme.txtDropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
 ```
 
 再用`git stash list`查看，就看不到任何stash内容了：

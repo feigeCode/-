@@ -1,12 +1,12 @@
 # IDEA添加自定义注释
 
-![image-20210227224544833](IDEA添加自定义注释/image-20210227224544833.png)
+![image-20210227224544833](https://gitee.com/feigeCode/picture/raw/master/img/image-20210227224544833.png)
 
 
 
 
 
-![image-20210227224650814](IDEA添加自定义注释/image-20210227224650814.png)
+![image-20210227224650814](https://gitee.com/feigeCode/picture/raw/master/img/image-20210227224650814.png)
 
 
 
@@ -20,7 +20,7 @@ cc为类注释(使用cc)
  */
 ~~~
 
-![image-20210227224911892](IDEA添加自定义注释/image-20210227224911892.png)
+![image-20210227224911892](https://gitee.com/feigeCode/picture/raw/master/img/image-20210227224911892.png)
 
 
 
@@ -36,7 +36,7 @@ mc为类注释（使用/mc+回车键）
  */
 ~~~
 
-![image-20210227224948629](IDEA添加自定义注释/image-20210227224948629.png)
+![image-20210227224948629](https://gitee.com/feigeCode/picture/raw/master/img/image-20210227224948629.png)
 
 脚本
 

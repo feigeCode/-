@@ -25,7 +25,7 @@ GitHub : https://github.com/spring-projects
 
 Spring 总共大约有 20 个模块， 由 1300 多个不同的文件构成。 而这些组件被分别整合在核心容器（Core Container） 、 AOP（Aspect Oriented Programming）和设备支持（Instrmentation） 、数据访问与集成（Data Access/Integeration） 、 Web、 消息（Messaging） 、 Test等 6 个模块中。 以下是 Spring 5 的模块结构图：
 
-![img](Spring-IOC/2019102923475419.png)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/2019102923475419.png)
 
 都可以单独存在，或者与其他一个或多个模块联合实现。每个模块的功能如下：
 

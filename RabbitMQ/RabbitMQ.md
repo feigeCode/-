@@ -5,7 +5,7 @@
 docker安装
 
 ~~~bash
-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+docker run -itd --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ~~~
 
 
@@ -18,7 +18,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-manag
 
 显示下边页面则安装成功
 
-![image-20201130143815165](RabbitMQ/image-20201130143815165.png)
+![image-20201130143815165](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130143815165.png)
 
 # 2、创建虚拟主机和用户
 
@@ -26,17 +26,17 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-manag
 
 ## 创建虚拟主机
 
-![image-20201130144034920](RabbitMQ/image-20201130144034920.png)
+![image-20201130144034920](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130144034920.png)
 
 ## 创建用户并绑定虚拟主机
 
-![](RabbitMQ/image-20201130144434240.png)
+![](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130144434240.png)
 
 
 
 
 
-![image-20201130144708837](RabbitMQ/image-20201130144708837.png)
+![image-20201130144708837](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130144708837.png)
 
 ![image-20201130144617641](RabbitMQ/image-20201130144617641.png)
 
@@ -61,7 +61,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-manag
 
 生产者将消息发送到“ hello”队列。使用者从该队列接收消息。
 
-![image-20201130204129493](RabbitMQ/image-20201130204129493.png)
+![image-20201130204129493](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130204129493.png)
 
 ~~~java
 package com.feige.utils;
@@ -204,7 +204,7 @@ public class Consumer {
 
 一个*工作队列*，该*队列*将用于在多个工作人员之间分配耗时的任务。
 
-![image-20201130203846143](RabbitMQ/image-20201130203846143.png)
+![image-20201130203846143](https://gitee.com/feigeCode/picture/raw/master/img/image-20201130203846143.png)
 
 
 

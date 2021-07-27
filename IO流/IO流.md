@@ -13,11 +13,11 @@
 
 	按操作方式分类结构图：
 
-	![IO-操作方式分类](IO流/sdfefsdf.jpg)
+	![IO-操作方式分类](https://gitee.com/feigeCode/picture/raw/master/img/sdfefsdf.jpg)
 
 	按操作对象分类结构图：
 
-	![IO-操作对象分类](IO流/iVFNyVCMSVCQi5wbmc.jpg)
+	![IO-操作对象分类](https://gitee.com/feigeCode/picture/raw/master/img/iVFNyVCMSVCQi5wbmc.jpg)
 
 	## BIO,NIO,AIO 有什么区别?
 

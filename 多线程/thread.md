@@ -482,7 +482,7 @@ interface ILove1{
 
 # 5、线程的状态
 
-![线程状态图](thread/thread-status.jpg)
+![线程状态图](https://gitee.com/feigeCode/picture/raw/master/img/thread-status.jpg)
 
 
 
@@ -1178,7 +1178,7 @@ public class JUCTest {
 
 如下图所示，线程 A 持有资源 2，线程 B 持有资源 1，他们同时都想申请对方的资源，所以这两个线程就会互相等待而进入死锁状态。
 
-![线程死锁](thread/sisuo.png)
+![线程死锁](https://gitee.com/feigeCode/picture/raw/master/img/sisuo.png)
 
 ## 产生死锁的原因主要是：
 
@@ -1363,7 +1363,7 @@ class MakeUp extends Thread{
 
 # 8、Lock
 
-![image-20201007122423330](thread/image-20201007122423330.png)
+![image-20201007122423330](https://gitee.com/feigeCode/picture/raw/master/img/image-20201007122423330.png)
 
 ## **不安全**
 
@@ -1473,7 +1473,7 @@ class Ticket implements Runnable{
 
 ## synchronized与Lock对比
 
-![image-20201007123458988](thread/image-20201007123458988.png)
+![image-20201007123458988](https://gitee.com/feigeCode/picture/raw/master/img/image-20201007123458988.png)
 
 # 9、生产者和消费者
 
