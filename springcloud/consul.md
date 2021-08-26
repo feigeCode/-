@@ -181,7 +181,7 @@ E:\consul_1.6.1_windows_amd64>consul.exe agent -dev
 
 输入``http://localhost:8005`查看服务
 
-![image-20200524214649557](./consul.assets/image-20200524214649557.png)
+![image-20200524214649557](https://gitee.com/feigeCode/picture/raw/master/img/image-20200524214649557.png)
 
 ## 1.3、cloud-consumerconsul-order80
 
@@ -365,7 +365,7 @@ public class ConsulOrderApplication80 {
 
 输入``http://localhost:8500`
 
-![image-20200524214837093](./consul.assets/image-20200524214837093.png)
+![image-20200524214837093](https://gitee.com/feigeCode/picture/raw/master/img/image-20200524214837093.png)
 
 
 
@@ -379,6 +379,6 @@ CAP理论关注粒度是数据，而不是整体系统设计的策略
 
 在这里介绍下Eureka、Zookeeper和consul这三种服务治理框架的区别。Spring Cloud Eureka实现的服务治理机制强调了CAP原理中的AP，即可用性与可靠性，而Zookeeper和consul这类强调CP（一致性、可靠性）。Eureka为了实现更高的服务可用性，牺牲了一定的一致性，在极端情况下它宁愿接受故障实例也不要丢掉“健康”实例，比如，当服务注册中心的网络发生故障断开时，由于所有的服务实例无法维持续约心跳，在强调CP的服务治理中将会把所有服务实例都剔除掉，而Eureka则会触发保护机制，保留此时的所有节点，以实现服务间依然可以进行互相调用的场景。
 
-![image-20200524143840146](./consul.assets/image-20200524143840146.png)
+![image-20200524143840146](https://gitee.com/feigeCode/picture/raw/master/img/image-20200524143840146.png)
 
-![image-20200524143910077](./consul.assets/image-20200524143910077.png)
+![image-20200524143910077](https://gitee.com/feigeCode/picture/raw/master/img/image-20200524143910077.png)

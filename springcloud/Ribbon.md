@@ -9,11 +9,11 @@ Spring CloudRibbon 是一个基于 HTTP 和 TCP 的客户端负载均衡工具�
 
 Spring Cloud Ribbon 虽然只是一个工具类框架，它不像服务注册中心、配置中心、API 网关那样需要独立部署，但是它几乎存在于每一个 Spring Cloud 构建的微服务和基础设施中。因为微服务间的调用，API 网关的请求转发等内容，实际上都是通过 Ribbon 来实现的（https://github.com/Netflix/ribbon）
 
-![image-20200525092722360](./Ribbon.assets/image-20200525092722360.png)
+![image-20200525092722360](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525092722360.png)
 
 **架构说明**
 
-![image-20200525130201521](./Ribbon.assets/image-20200525130201521.png)
+![image-20200525130201521](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525130201521.png)
 
 # 2、入门
 
@@ -21,11 +21,11 @@ Spring Cloud Ribbon 虽然只是一个工具类框架，它不像服务注册中
 
 **Eureka自带了ribbon，我们只要引入Eureka，就有了ribbon**
 
-![image-20200525130551703](Ribbon.assets/image-20200525130551703.png)
+![image-20200525130551703](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525130551703.png)
 
 > 加上@LoadBalanced就有了负载均衡的能力了
 
-![image-20200525133923075](./Ribbon.assets/image-20200525133923075.png)
+![image-20200525133923075](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525133923075.png)
 
 
 
@@ -115,17 +115,17 @@ public class OrderController {
 
 **IRule:根据特定算法从服务列表中选取一个要访问的服务**
 
-![image-20200525130329865](./Ribbon.assets/image-20200525130329865.png)
+![image-20200525130329865](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525130329865.png)
 
-![image-20200525125831113](./Ribbon.assets/image-20200525125831113.png)
+![image-20200525125831113](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525125831113.png)
 
 > 替换
 
-![image-20200525134838755](./Ribbon.assets/image-20200525134838755.png)
+![image-20200525134838755](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525134838755.png)
 
 **这个自定义配置类不能放在 @ComponentScan 所扫描的当前包下以及子包下，否则自定义的配置类就会被所有的 Ribbon 客户端所共享，达不到特殊化定制的目的了。**
 
-![image-20200525134749473](./Ribbon.assets/image-20200525134749473.png)
+![image-20200525134749473](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525134749473.png)
 
 MyRule.java
 
@@ -155,7 +155,7 @@ public class MyRule {
 
 > RoundRobinRule的原理
 
-![image-20200525140437026](./Ribbon.assets/image-20200525140437026.png)
+![image-20200525140437026](https://gitee.com/feigeCode/picture/raw/master/img/image-20200525140437026.png)
 
 > RoundRobinRule源码
 
@@ -382,4 +382,4 @@ public class OrderController {
 
 项目结构图
 
-![image-20200528164430632](./Ribbon.assets/image-20200528164430632.png)
+![image-20200528164430632](https://gitee.com/feigeCode/picture/raw/master/img/image-20200528164430632.png)

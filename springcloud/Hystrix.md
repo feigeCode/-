@@ -4,15 +4,15 @@
 
 ![image-20200530172325236](./Hystrix.assets/image-20200530172325236.png)
 
-![image-20200530172302603](./Hystrix.assets/image-20200530172302603.png)
+![image-20200530172302603](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530172302603.png)
 
-![image-20200530172347539](./Hystrix.assets/image-20200530172347539.png)
+![image-20200530172347539](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530172347539.png)
 
 ![image-20200530172405675](./Hystrix.assets/image-20200530172405675.png)
 
 ## 1.2、Hystrix是什么
 
-![image-20200530172656432](./Hystrix.assets/image-20200530172656432.png)
+![image-20200530172656432](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530172656432.png)
 
 [官网资料](https://github.com/Netflix/Hystrix/wiki/How-To-Use)
 
@@ -326,7 +326,7 @@ public class HystrixApplication8001 {
 
 项目的结构图
 
-![image-20200530182559766](./Hystrix.assets/image-20200530182559766.png)
+![image-20200530182559766](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530182559766.png)
 
 ## 2.2、模块二
 
@@ -553,7 +553,7 @@ public class HystrixApplication80 {
 
 项目结构图
 
-![image-20200530182707856](./Hystrix.assets/image-20200530182707856.png)
+![image-20200530182707856](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530182707856.png)
 
 ## 2.3、开启Dashboard
 
@@ -639,7 +639,7 @@ public class DashboardApplication9001 {
 
 项目结构图
 
-![image-20200530182800352](./Hystrix.assets/image-20200530182800352.png)
+![image-20200530182800352](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530182800352.png)
 
 ### 测试
 
@@ -661,7 +661,7 @@ public class DashboardApplication9001 {
 
 **开启Eureka和8001服务**
 
-![image-20200530183031682](./Hystrix.assets/image-20200530183031682.png)
+![image-20200530183031682](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530183031682.png)
 
 填写监控地址http://localhost:8001/hystrix.stream
 
@@ -673,11 +673,11 @@ http://localhost:8001/payment/circuit/-3
 
 ### 监控结果，成功
 
-![image-20200530183306230](./Hystrix.assets/image-20200530183306230.png)
+![image-20200530183306230](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530183306230.png)
 
 ### 监控结果，失败
 
-![image-20200530183354569](./Hystrix.assets/image-20200530183354569.png)
+![image-20200530183354569](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530183354569.png)
 
 ### 如何看
 
@@ -692,12 +692,12 @@ http://localhost:8001/payment/circuit/-3
 
 说明
 
-![image-20200530183658592](./Hystrix.assets/image-20200530183658592.png)
+![image-20200530183658592](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530183658592.png)
 
-![image-20200530183719161](./Hystrix.assets/image-20200530183719161.png)
+![image-20200530183719161](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530183719161.png)
 
 
 
 复杂
 
-![image-20200530183818879](./Hystrix.assets/image-20200530183818879.png)
+![image-20200530183818879](https://gitee.com/feigeCode/picture/raw/master/img/image-20200530183818879.png)

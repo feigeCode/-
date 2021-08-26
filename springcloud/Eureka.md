@@ -1,6 +1,6 @@
 # 1、Eureka核心概念
 
-<img src="./Eureka.assets/image-20200522193455404.png" alt="image-20200522193455404" style="zoom: 200%;" />
+<img src="https://gitee.com/feigeCode/picture/raw/master/img/image-20200522193455404.png" alt="image-20200522193455404" style="zoom: 200%;" />
 
 Eureka的两大主体**Eureka Server** 和 **Eureka Client**
 
@@ -151,13 +151,13 @@ pom.xml
 
 **整个项目的目录结构图**
 
-![image-20200522230237850](./Eureka.assets/image-20200522230237850.png)
+![image-20200522230237850](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522230237850.png)
 
 ### 2.2、cloud-api-commons
 
 **新建一张表、编写实体类和统一响应类**
 
-![image-20200522220501667](./Eureka.assets/image-20200522220501667.png)
+![image-20200522220501667](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522220501667.png)
 
 
 
@@ -255,13 +255,13 @@ public class CommonResult <T>{
 
 **项目的目录结构**
 
-![image-20200522221059619](./Eureka.assets/image-20200522221059619.png)
+![image-20200522221059619](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522221059619.png)
 
 
 
 **打成jar包**
 
-![image-20200522221338825](./Eureka.assets/image-20200522221338825.png)
+![image-20200522221338825](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522221338825.png)
 
 
 
@@ -390,7 +390,7 @@ public class EurekaServerApplication7001 {
 
 **项目的目录结构**
 
-![image-20200522222333473](./Eureka.assets/image-20200522222333473.png)
+![image-20200522222333473](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522222333473.png)
 
 
 
@@ -510,7 +510,7 @@ public class EurekaServerApplication7002 {
 
 **项目的目录结构**
 
-![image-20200522223326598](./Eureka.assets/image-20200522223326598.png)
+![image-20200522223326598](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522223326598.png)
 
 ### 2.5、cloud-provider-payment8001
 
@@ -828,7 +828,7 @@ public class PaymentApplication8001 {
 
 **项目目录结构**
 
-![image-20200522221852189](./Eureka.assets/image-20200522221852189.png)
+![image-20200522221852189](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522221852189.png)
 
 ### 2.6、cloud-provider-payment8002
 
@@ -1145,7 +1145,7 @@ public class PaymentApplication8002 {
 
 **项目目录结构**
 
-![image-20200522224636789](./Eureka.assets/image-20200522224636789.png)
+![image-20200522224636789](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522224636789.png)
 
 ### 2.7、cloud-consumer-order80
 
@@ -1322,7 +1322,7 @@ public class OrderApplication80 {
 
 **项目的目录结构**
 
-![image-20200522224246942](./Eureka.assets/image-20200522224246942.png)
+![image-20200522224246942](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522224246942.png)
 
 ### 2.8、开启Dashboard
 
@@ -1330,7 +1330,7 @@ public class OrderApplication80 {
 
 **第一、idea项目启动中，会弹出一个窗口Run Dashboard,点击一下，才能正常使用**
 
-![这里写图片描述](./Eureka.assets/20180915152836821.png)
+![这里写图片描述](https://gitee.com/feigeCode/picture/raw/master/img/20180915152836821.png)
 
 **第二、找到.idea下面的workspace.xml文件 ，在下面的代码中加入一段配置代码  源代码位置**
 
@@ -1352,7 +1352,7 @@ public class OrderApplication80 {
 
 **效果图**
 
-![image-20200522225254704](./Eureka.assets/image-20200522225254704.png)
+![image-20200522225254704](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522225254704.png)
 
 ### 2.9、开启热部署
 
@@ -1389,10 +1389,10 @@ public class OrderApplication80 {
 
 **第三**
 
-![image-20200522225930059](./Eureka.assets/image-20200522225930059.png)
+![image-20200522225930059](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522225930059.png)
 
 **第四**
 
-![image-20200522230036798](./Eureka.assets/image-20200522230036798.png)
+![image-20200522230036798](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522230036798.png)
 
-![image-20200522230058834](./Eureka.assets/image-20200522230058834.png)
+![image-20200522230058834](https://gitee.com/feigeCode/picture/raw/master/img/image-20200522230058834.png)

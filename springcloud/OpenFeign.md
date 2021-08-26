@@ -1,14 +1,14 @@
 # 1、OpenFeign
 
-![image-20200528191321143](OpenFeign.assets/image-20200528191321143.png)
+![image-20200528191321143](https://gitee.com/feigeCode/picture/raw/master/img/image-20200528191321143.png)
 
 
 
-![image-20200528180620740](./OpenFeign.assets/image-20200528180620740.png)
+![image-20200528180620740](https://gitee.com/feigeCode/picture/raw/master/img/image-20200528180620740.png)
 
 **Feign和OpenFeign两者区别**
 
-![image-20200528191148844](./OpenFeign.assets/image-20200528191148844.png)
+![image-20200528191148844](https://gitee.com/feigeCode/picture/raw/master/img/image-20200528191148844.png)
 
 # 2、入门
 
@@ -172,7 +172,7 @@ public class OpenFeignApplication80 {
 
 **项目结构**
 
-![image-20200528190230272](./OpenFeign.assets/image-20200528190230272.png)
+![image-20200528190230272](https://gitee.com/feigeCode/picture/raw/master/img/image-20200528190230272.png)
 
 # 3、测试
 

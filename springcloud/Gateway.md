@@ -4,7 +4,7 @@
 
 ![image-20200531120437552](./Gateway.assets/image-20200531120437552.png)
 
-![image-20200531120354516](./Gateway.assets/image-20200531120354516.png)
+![image-20200531120354516](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531120354516.png)
 
 ![image-20200531120504139](./Gateway.assets/image-20200531120504139.png)
 
@@ -16,7 +16,7 @@ API 网关是一个处于应用程序或服务（提供 REST API 接口服务）
 
 >  **API网关的职能**
 
-![img](./Gateway.assets/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjAzMjUwMjEucG5n.jpg)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjAzMjUwMjEucG5n.jpg)
 
 Gateway能做什么
 
@@ -29,37 +29,37 @@ Gateway能做什么
 
 >  **微服务中网关在哪里**
 
-![image-20200531135019817](./Gateway.assets/image-20200531135019817.png)
+![image-20200531135019817](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531135019817.png)
 
 >  **为什么我们用Gateway而不用Zuul**
 
 ![image-20200531135211141](./Gateway.assets/image-20200531135211141.png)
 
-![image-20200531135741701](./Gateway.assets/image-20200531135741701.png)
+![image-20200531135741701](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531135741701.png)
 
-![image-20200531135938083](./Gateway.assets/image-20200531135938083.png)
+![image-20200531135938083](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531135938083.png)
 
 >  **Zuul1.x模型**
 
-![image-20200531140257333](./Gateway.assets/image-20200531140257333.png)
+![image-20200531140257333](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531140257333.png)
 
 > **WebFlux是什么**
 
-![image-20200531140554133](./Gateway.assets/image-20200531140554133.png)
+![image-20200531140554133](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531140554133.png)
 
 ![image-20200531140626226](./Gateway.assets/image-20200531140626226.png)
 
 > **Gateway的三大核心概念**
 
-![img](./Gateway.assets/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjA3MTM4MjIucG5n.jpg)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjA3MTM4MjIucG5n.jpg)
 
 
 
-![image-20200531141312786](./Gateway.assets/image-20200531141312786.png)
+![image-20200531141312786](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531141312786.png)
 
 > **Gateway的工作流程**
 
-![image-20200531141417361](./Gateway.assets/image-20200531141417361.png)
+![image-20200531141417361](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531141417361.png)
 
 **核心逻辑：路由转发+执行过滤器链**
 
@@ -234,7 +234,7 @@ public class GatewayConfig {
 
 ## 2.2、Predicate
 
-![img](./Gateway.assets/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjA4MDkxNDYucG5n.jpg)
+![img](https://gitee.com/feigeCode/picture/raw/master/img/aHR0cDovL2Nvcy5yYWluMTAyNC5jb20vbWFya2Rvd24vaW1hZ2UtMjAxOTEwMDgxNjA4MDkxNDYucG5n.jpg)
 
 
 
@@ -513,14 +513,14 @@ spring:
 - 业务逻辑之前
 - 业务逻辑之后
 
-![image-20200531152720838](./Gateway.assets/image-20200531152720838.png)
+![image-20200531152720838](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531152720838.png)
 
 种类
 
 - 单一 GatewayFilter
 - 全局 GlobalFilter
 
-![image-20200531152740956](./Gateway.assets/image-20200531152740956.png)
+![image-20200531152740956](https://gitee.com/feigeCode/picture/raw/master/img/image-20200531152740956.png)
 
 > **自定义全局GlobalFilter**
 
